@@ -17,9 +17,9 @@
       var currTime = new Date().getTime(),
           timeToCall = Math.max(0, 16 - (currTime - lastTime)),
           id = w.setTimeout(function () {
-            callback(currTime + timeToCall);
-          },
-          timeToCall);
+                callback(currTime + timeToCall);
+              },
+              timeToCall);
       lastTime = currTime + timeToCall;
       return id;
     };
@@ -49,12 +49,12 @@
       html += '<p>';
       for (j = 0; j < size; ++j)
         html += '<span data-shadow-color="' +
-          colors[(i * size + j) % colors.length] +
-          '" class="realshadow block ' +
-          shapes[(i * size + j) % shapes.length] +
-          '" style="background:rgba(' +
-          colors[(i * size + j) % colors.length].replace(colorRe, '255') +
-        ',.5)"></span>';
+            colors[(i * size + j) % colors.length] +
+            '" class="realshadow block ' +
+            shapes[(i * size + j) % shapes.length] +
+            '" style="background:rgba(' +
+            colors[(i * size + j) % colors.length].replace(colorRe, '255') +
+            ',.5)"></span>';
       html += '</p>';
     }
 
@@ -63,18 +63,18 @@
     }
 
     $container.innerHTML =
-      '<div class="sub nav">' +
+        '<div class="sub nav">' +
         '<label>' +
-          '<input type="checkbox" id="inset"' + (options.inset ? ' checked' : '') + '/>' +
-          'Inset Shadows' +
+        '<input type="checkbox" id="inset"' + (options.inset ? ' checked' : '') + '/>' +
+        'Inset Shadows' +
         '</label>' +
         '<label>' +
-          '<input type="checkbox" id="inverse"' + (options.inverse ? ' checked' : '') + '/>' +
-          'Inverse Direction' +
+        '<input type="checkbox" id="inverse"' + (options.inverse ? ' checked' : '') + '/>' +
+        'Inverse Direction' +
         '</label>' +
-      '</div>' +
-      '<div class="wrapper">' + html + '</div>' +
-      '<a class="big" href="http://corejs.github.io/">Check my new project, CoreJS<a/>';
+        '</div>' +
+        '<div class="wrapper">' + html + '</div>' +
+        '<a class="big" href="http://corejs.github.io/">Check my new project, CoreJS<a/>';
 
     document.body.addEventListener('change', function (e) {
       options[e.target.id] = e.target.checked;
@@ -91,37 +91,37 @@
   };
 
 
-  var drop = function(tab) {
+  var drop = function (tab) {
 
     tab = tab || 'A';
 
     $container.innerHTML =
-      '<div class="sub nav">' +
+        '<div class="sub nav">' +
         '<a id="A"' + (tab === 'A' ? 'class="current"' : '') + '>Example A</a>' +
         '<a id="B"' + (tab === 'B' ? 'class="current"' : '') + '>Example B</a>' +
-      '</div>' +
-      (tab === 'A' ?
-        '<div id="exampleA">' +
-          '<h2>Shadows can be any shape. Any.</h2>' +
-          '<p>Shadow shape repeats the element transparency</p>' +
-          '<div class="tooltip"></div>' +
-          '<img src="i/window.png"/>' +
-          '<img src="i/phone.png"/>' +
-          '<img src="i/snowflake.png"/>' +
-        '</div>'
-      :
-        '<div id="exampleB">' +
-          '<a href="http://corejs.github.io/"><img src="i/corejs.png"/></a>' +
-          '<div class="top panel"></div>' +
-          '<div class="right panel"></div>' +
-          '<div class="bottom panel"></div>' +
-          '<div class="left panel"></div>' +
-        '</div>'
-      ) +
-      '<div id="colors"></div>';
+        '</div>' +
+        (tab === 'A' ?
+            '<div id="exampleA">' +
+            '<h2>Shadows can be any shape. Any.</h2>' +
+            '<p>Shadow shape repeats the element transparency</p>' +
+            '<div class="tooltip"></div>' +
+            '<img src="i/window.png"/>' +
+            '<img src="i/phone.png"/>' +
+            '<img src="i/snowflake.png"/>' +
+            '</div>'
+                :
+            '<div id="exampleB">' +
+            '<a href="http://corejs.github.io/"><img src="i/corejs.png"/></a>' +
+            '<div class="top panel"></div>' +
+            '<div class="right panel"></div>' +
+            '<div class="bottom panel"></div>' +
+            '<div class="left panel"></div>' +
+            '</div>'
+        ) +
+        '<div id="colors"></div>';
 
     var $colors = document.getElementById('colors'),
-        s = 'Pick a color<br/><div style="background:#fff"></div>';
+        s = 'Pick a color<br/><div style="background:#FFFFFF"></div>';
     for (var i = 12; i--;) {
       s += '<div style="background:hsl(' + i * 30 + ',100%,50%)"></div>';
     }
@@ -146,12 +146,12 @@
     var text = 'The outside world is a projection, you put it there. It is not happening out there, it is happening inside your head. It is, in fact, a dream, exactly like when you fall asleep. We need to see, we need to perceive, we need to dream actively, because this is the only way we can take this huge universe and put it inside a very tiny head. We fold it, make an image, and then project it out.';
 
     $container.innerHTML =
-      tags('h3', 'Text Shadows') +
-      '<br/>' +
-      '<div class="fold">' +
+        tags('h3', 'Text Shadows') +
+        '<br/>' +
+        '<div class="fold">' +
         '<span>' + text + '</span>' +
-      '</div>' +
-      tags('h4', 'WE FOLD IT');
+        '</div>' +
+        tags('h4', 'WE FOLD IT');
 
     realshadow(document.getElementsByTagName('h3'), {type: 'text'});
     var $fold = document.getElementsByClassName('fold')[0];
@@ -164,12 +164,12 @@
 
     var s = 'FLAT SHADOWS';
     $container.innerHTML =
-      '<div id="flat">' +
+        '<div id="flat">' +
         [tags('span', s), tags('i', s), tags('b', s), tags('u', s)].join('<br/>') +
-      '</div>' +
-      '<div id="box">' +
+        '</div>' +
+        '<div id="box">' +
         '' +
-      '</div>';
+        '</div>';
 
     var $flat = document.getElementById('flat');
     realshadow($flat.getElementsByTagName('span'), {type: 'text', style: 'flat', length: 40, color: '255,160,0'});
@@ -183,7 +183,7 @@
     var cx, cy, r, hasMouseMoved;
 
     return function () {
-      cx = window.innerWidth  >> 1;
+      cx = window.innerWidth >> 1;
       cy = window.innerHeight >> 1;
       r = Math.min(cx, cy);
       hasMouseMoved = false;
@@ -213,17 +213,17 @@
 
   var $container = document.getElementById('demo');
 
-  (function() {
+  (function () {
 
     var routes = {
-        box    : box,
-        drop   : drop,
-        text   : text,
-        flat   : flat,
-        default: 'box'
-      },
-      $navigation = document.getElementById('navigation'),
-      html = '';
+          box: box,
+          drop: drop,
+          text: text,
+          flat: flat,
+          default: 'box'
+        },
+        $navigation = document.getElementById('navigation'),
+        html = '';
 
     for (var i in routes) {
       if (i === 'default') continue;

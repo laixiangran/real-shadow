@@ -1,2 +1,5 @@
-
-.DS_Store
+.idea
+.idea/modules.xml
+.idea/real-shadow.iml
+.idea/workspace.xml\
+.idea/vcs.xml
